@@ -110,22 +110,23 @@ webpack教程
 	};
 	```
 3. html-webpack-plugin功能
-	3.1 template   // 有时候我们要让 index.html 根据我们的意愿来生成。就是说它的内容是我们自己定的
-	3.2 filename   // 默认情况下生成的 html 文件叫 index.html，但有时候你不想叫这个名字，可以改
-	3.3 minify: {collapseWhitespace: true,}  //这个可以把生成的 index.html 文件的内容的没用空格去掉，减少空间。
-	3.4 hash       // 为了更好的 cache，可以在文件名后加个 hash。
-		```
-		plugins: [
-			new HtmlWebpackPlugin({
-		    template: './src/index.html',
-		    filename: 'index.html',
-		    minify: {
-			    collapseWhitespace: true,
-			  },
-			  hash: true
-		  })
-		]
-		```
+	* 3.1 template   // 有时候我们要让 index.html 根据我们的意愿来生成。就是说它的内容是我们自己定的  
+	* 3.2 filename   // 默认情况下生成的 html 文件叫 index.html，但有时候你不想叫这个名字，可以改
+	* 3.3 minify: {collapseWhitespace: true,}  //这个可以把生成的 index.html 文件的内容的没用空格去掉，减少空间。
+	* 3.4 hash       // 为了更好的 cache，可以在文件名后加个 hash。
+
+	```
+	plugins: [
+		new HtmlWebpackPlugin({
+	    template: './src/index.html',
+	    filename: 'index.html',
+	    minify: {
+		    collapseWhitespace: true,
+		  },
+		  hash: true
+	  })
+	]
+	```
 
 ### 6. 使用 loader 处理 CSS 和 Sass、Stylus、Less 等 CSS 扩展语言
 1. 什么是 loader
