@@ -355,7 +355,7 @@ dist
 
 所以有了 模块热替换 的功能，我们来试一下，让我们一改 CSS 然后浏览器不用刷新就会让页面生效改变。
 
-10.1 启用 HMR
+##### 11.1 启用 HMR
 
 webpack.config.js 改成：
 ```
@@ -405,7 +405,7 @@ filename: '[name].[chunkhash].js'
 filename: '[name].[hash].js'
 ```
 
-10.2 处理 extract-text-webpack-plugin
+##### 11.2 处理 extract-text-webpack-plugin
 extract-text-webpack-plugin 这个插件来处理 CSS 的，在用 HMR 的时候要先把它关闭一下。
 
 用一个参数 disable: true 就可以关闭掉。
@@ -442,14 +442,14 @@ new ExtractTextPlugin({
 ```
 
 
-### 11. 生产环境 vs 开发环境
+### 12. 生产环境 vs 开发环境
 
 要让生产环境使用 extract-text-webpack-plugin 这个插件，而开发环境不使用，如何做到呢？
 
 其实原理很简单，只要能区分出哪个是开发环境，哪个是生产环境就可以，只要判断是生产环境的时候就用，不是的话，就不用，就可以了。
 
 
-##### 1. 增加环境变量
+##### 12.1. 增加环境变量
 
 首先来看一下之前的开发环境和生产环境分别使用的编译命令：
 package.json
@@ -469,7 +469,7 @@ package.json
 },
 ```
 
-##### 2. 使用环境变量
+##### 12.2. 使用环境变量
 
 在 webpack.config.js 文件中：
 ```
