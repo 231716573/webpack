@@ -404,3 +404,79 @@ filename: '[name].[chunkhash].js'
 ```
 filename: '[name].[hash].js'
 ```
+
+10.2 处理 extract-text-webpack-plugin
+extract-text-webpack-plugin 这个插件来处理 CSS 的，在用 HMR 的时候要先把它关闭一下。
+
+用一个参数 disable: true 就可以关闭掉。
+
+webpack.config.js
+```
+new ExtractTextPlugin("style.css")
+```
+变成
+```
+new ExtractTextPlugin({
+  filename: 'style.css',
+  disable: true
+}),
+``` 
+
+然后把处理 scss 文件的 loader 部分变成类似下面这样：
+```
+...
+  test: /\.scss$/,
+  use: ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    //resolve-url-loader may be chained before sass-loader if necessary
+    use: ['css-loader', 'sass-loader']
+  })
+...
+```
+变成 
+```
+...
+  test: /\.scss$/,
+  use: ['style-loader', 'css-loader', 'sass-loader']
+...
+```
+
+
+### 11. 生产环境 vs 开发环境
+
+要让生产环境使用 extract-text-webpack-plugin 这个插件，而开发环境不使用，如何做到呢？
+
+其实原理很简单，只要能区分出哪个是开发环境，哪个是生产环境就可以，只要判断是生产环境的时候就用，不是的话，就不用，就可以了。
+
+
+##### 1. 增加环境变量
+
+首先来看一下之前的开发环境和生产环境分别使用的编译命令：
+package.json
+```
+"scripts": {
+  "dev": "webpack-dev-server",
+  "prod": "webpack -p"
+},
+```
+分别是开发环境使用的 npm run dev 命令和生产环境使用的 npm run prod 命令。  
+
+我们把它改成下面这样：
+```
+"scripts": {
+  "dev": "webpack-dev-server",
+  "prod": "NODE_ENV=production webpack -p"
+},
+```
+
+##### 2. 使用环境变量
+
+在 webpack.config.js 文件中：
+```
+var isProd = process.env.NODE_ENV === 'production'; // true or false
+``` 
+process.env.NODE_ENV 就能得到之前设置的变量，    
+如果运行的是 npm run prod，那么process.env.NODE_ENV 的值就是 production，那 isProd 就是 true，    
+如果运行的是 npm run dev，isProd 就是 false，因为 npm run dev 没有设置这个 NODE_ENV 这个环境变量嘛。
+
+我们把 webpack.config.js 中的代码更改如下：
