@@ -518,3 +518,31 @@ module.exports = {
 只要能区别出不同的环境，使用不同的配置内容就可以了。
 
 现在就可以放心地使用 npm run dev 和 npm run prod 命令了，再也不用临时关掉一些插件了。
+
+
+### 13. devtool: 'source-map' 是什么意思
+有时候，在看别人的 webpack.config.js 文件的配置时，常看到这么一行：
+```
+devtool: 'source-map'
+```
+
+#### 13.1 使用 devtool: 'source-map'
+在 webpack.config.js 文件中谈价 devtool: 'source-map'，如下所示
+```
+module.exports = {
+	entry: {
+		...
+	},
+	devtool: 'source-map'  // 这样就能够查看哪里报错并指导错误的源文件
+}
+```
+
+devtool 的7种模式：
+1、 eval                 // 每个module会封装到eval里包裹起来执行，并且在末尾追加注释
+2、 source-map          // 生成一个SourceMap 文件
+3、 hidden-source-map   // 和source-map 一样，但不会在 bundle 末尾注释
+4、 inline-source-map   // 生成一个DataUrl 形式的 SourceMap 文件
+5、 cleap-source-map    // 生成一个没有列信息(column-mappings) 的SourceMap 文件，不包含 loader 的sourcemap
+6、 eval-source-map     // 每个 module 会通过 eval() 来执行，并且生成一个 DataUrl 形式的SourceMap
+7、 cheap-module-source-map   // 生成一个没有列信息(column-mappings) 的SourceMap 文件，包含 loader 的sourcemap
+
