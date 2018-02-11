@@ -135,72 +135,111 @@ webpack教程
 2. 用 css-loader 和 style-loader 处理 CSS
 	2.1 安装 css-loader style-loader
 	```
-		npm install --save-dev css-loader style-loader
+	npm install --save-dev css-loader style-loader
 	```
 	
 	2.2 处理 webpack.config.js
 	```
-		var HtmlWebpackPlugin = require('html-webpack-plugin');
+	var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-		module.exports = {
-		  entry: './src/app.js',
-		  output: {
-		    path: __dirname + '/dist',
-		    filename: 'app.bundle.js'
-		  },
-		  plugins: [new HtmlWebpackPlugin({
-		    template: './src/index.html',
-		    filename: 'index.html',
-		    minify: {
-		      collapseWhitespace: true,
-		    },
-		    hash: true,
-		  })],
-		  module: {
-		    rules: [
-		      {
-		        test: /\.css$/,
-		        use: [ 'style-loader', 'css-loader' ]
-		      }
-		    ]
-		  }
-		};
+	module.exports = {
+	  entry: './src/app.js',
+	  output: {
+	    path: __dirname + '/dist',
+	    filename: 'app.bundle.js'
+	  },
+	  plugins: [new HtmlWebpackPlugin({
+	    template: './src/index.html',
+	    filename: 'index.html',
+	    minify: {
+	      collapseWhitespace: true,
+	    },
+	    hash: true,
+	  })],
+	  module: {
+	    rules: [
+	      {
+	        test: /\.css$/,
+	        use: [ 'style-loader', 'css-loader' ]
+	      }
+	    ]
+	  }
+	};
 	```
 
 	2.3 用 extract-text-webpack-plugin 把 CSS 分离成文件
 	有时候我们要把 SASS 或 CSS 处理好后，放到一个 CSS 文件中，用这个插件就可以实现。
 	```
-		npm install --save-dev extract-text-webpack-plugin
+	npm install --save-dev extract-text-webpack-plugin
 	```
 	修改 webpack.config.js 为：
 	```
-		var HtmlWebpackPlugin = require('html-webpack-plugin');
-		var ExtractTextPlugin = require('extract-text-webpack-plugin');
+	var HtmlWebpackPlugin = require('html-webpack-plugin');
+	var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-		module.exports = {
-			entry: './src/app.js',
-			output: {
-				path: __dirname + '/dist',
-				filename: 'app.bundle.js'
-			},
-			plugins: [
-				new ExtractTextPlugin("styles.css"),
-				new HtmlWebpackPlugin({
-					template: './src/zhongqiu.html',
-					filename: 'index.html',
-					hash: true
-				})
-			],
-			module: {
-				rules: [
-		    	{
-		      	test: /\.css$/,
-		      	use: ExtractTextPlugin.extract({
-		      		fallback: 'style-loader',
-		      		use: ['css-loader']
-		      	})
-		    	}
-		    ]
-			}
-		};
+	module.exports = {
+		entry: './src/app.js',
+		output: {
+			path: __dirname + '/dist',
+			filename: 'app.bundle.js'
+		},
+		plugins: [
+			new ExtractTextPlugin("styles.css"),
+			new HtmlWebpackPlugin({
+				template: './src/zhongqiu.html',
+				filename: 'index.html',
+				hash: true
+			})
+		],
+		module: {
+			rules: [
+	    	{
+	      	test: /\.css$/,
+	      	use: ExtractTextPlugin.extract({
+	      		fallback: 'style-loader',
+	      		use: ['css-loader']
+	      	})
+	    	}
+	    ]
+		}
+	};
 	```
+
+
+### 7. 初识 webpack-dev-server
+	我们之前使用 webpack -d --watch 来在开发环境下编译静态文件，但是这个功能，完全可以用 webpack-dev-server 来代替。
+
+	除此之外， webpack-dev-server 还有其他的功能，比如在本地上开启服务，打开浏览器等。
+
+	```
+	# 先全局安装
+	npm install -g webpack-dev-server
+	npm install --save-dev webpack-dev-server
+	```
+
+	然后运行命令：
+
+	```
+	webpack-dev-server
+	```
+
+	现在我们用浏览器打开 localhost:8080 也可以看到以前的效果。
+
+	// 默认是运行在 8080 端口，这个我们可以改。
+
+	webpack.config.js
+	```
+	var HtmlWebpackPlugin = require('html-webpack-plugin');
+	const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+	module.exports = {
+	  entry: './src/app.js',
+	  ...
+	  devServer: {
+	    port: 9000,
+	    open: true    // 运行 webpack-dev-server 的时候就自动打开浏览器。
+	  },
+	  ...
+	};
+	```
+
