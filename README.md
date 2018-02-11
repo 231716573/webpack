@@ -538,7 +538,7 @@ module.exports = {
 ```
 
 devtool 的7种模式：   
-   
+
 1、 eval                 // 每个module会封装到eval里包裹起来执行，并且在末尾追加注释   
 2、 source-map          // 生成一个SourceMap 文件   
 3、 hidden-source-map   // 和source-map 一样，但不会在 bundle 末尾注释   
@@ -547,3 +547,96 @@ devtool 的7种模式：
 6、 eval-source-map     // 每个 module 会通过 eval() 来执行，并且生成一个 DataUrl 形式的SourceMap   
 7、 cheap-module-source-map   // 生成一个没有列信息(column-mappings) 的SourceMap 文件，包含 loader 的sourcemap   
 
+### 14. 如何打包图片
+安装 file-loader
+```
+npm install file-loader --save-dev
+```
+此时 webpack.config.js
+```
+...
+module.exports = {
+	...
+	module: {
+		rule: [
+			...
+			{
+				test: /\.(gif|png/|jpe?g|svg)$/,
+				use: [
+					{
+						loader: 'file-loader'
+					}
+				]
+			}
+		]
+	}
+}
+```
+
+#### 14.1 file-loader 的参数
+其实，file.loader 是可以带参数的，如下所示
+```
+test: /\.(gif|png|jpe?g|svg)$/i    // 表示可以处理大部分图片的格式
+use: [
+	{
+		loader: 'file-loader',
+		options: {
+			name: '[name].[ext]',  // [name] 代表文件名，[ext] 代表文件拓展名
+			outputPath: 'images/'  // output 是输出的路径
+		}	
+	}	
+]
+
+#### 14.2 解析 html 代码里面的 img 标签
+安装 html-loader
+```
+npm install html-loader --save-dev
+```
+webpack.config.js :
+```
+{
+	test: /\.html$/,
+	use: [{
+		loader: 'html-loader',
+		options: {
+			minimize: true
+		}
+	}]
+}
+
+#### 14.3 压缩图片
+有时图片太大，输出到生产环境的时候，希望可以让图片文件的体积小点，webpack可以自动压缩图片   
+安装 image-webpack-loader   
+```
+npm install image-webpack-loader --save-dev
+```
+此时修改webpack.config.js
+```
+{
+	test: /\.(gif|png|jpe?g|svg)$/i,
+	use: [
+		{
+			loader: 'file-loader',
+			options: {
+				name: '[name].[ext]',
+				outputPath: 'images/'
+			}
+		},
+		{
+			loader: 'image-webpack-loader',
+			options: {
+				bypassOnDebug: true
+			}
+		}
+	]
+},
+{
+	test: /\.html$/,
+	use: [{
+		loader: 'html-loader',
+		options: {
+			minimize: true
+		}
+	}]
+}
+```
