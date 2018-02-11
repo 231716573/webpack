@@ -538,6 +538,7 @@ module.exports = {
 ```
 
 devtool 的7种模式：   
+   
 1、 eval                 // 每个module会封装到eval里包裹起来执行，并且在末尾追加注释   
 2、 source-map          // 生成一个SourceMap 文件   
 3、 hidden-source-map   // 和source-map 一样，但不会在 bundle 末尾注释   
