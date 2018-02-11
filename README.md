@@ -203,7 +203,6 @@ webpack教程
 	    ]
 		}
 	};
-	```
 
 
 ### 7. 初识 webpack-dev-server
@@ -211,7 +210,35 @@ webpack教程
 
 	除此之外， webpack-dev-server 还有其他的功能，比如在本地上开启服务，打开浏览器等。
 
-	
+	```
+	# 先全局安装
+	npm install -g webpack-dev-server
+	npm install --save-dev webpack-dev-server
+	```
+
+	然后运行命令：
+	webpack-dev-server
+
+
+	现在我们用浏览器打开 localhost:8080 也可以看到以前的效果。
+
+	// 默认是运行在 8080 端口，这个我们可以改。
+
+	修改 webpack.config.js 为：
+	```
+	var HtmlWebpackPlugin = require('html-webpack-plugin');
+	const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+	module.exports = {
+	  entry: './src/app.js',
+	  ...
+	  devServer: {
+	    port: 9000,
+	    open: true    // 运行 webpack-dev-server 的时候就自动打开浏览器。
+	  },
+	  ...
+	};
+	```
 
 
 
