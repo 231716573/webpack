@@ -480,3 +480,41 @@ process.env.NODE_ENV 就能得到之前设置的变量，
 如果运行的是 npm run dev，isProd 就是 false，因为 npm run dev 没有设置这个 NODE_ENV 这个环境变量嘛。
 
 我们把 webpack.config.js 中的代码更改如下：
+```
+...
+
+var isProd = process.env.NODE_ENV === 'production'; // true or false
+var cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+var cssProd = ExtractTextPlugin.extract({
+  fallback: 'style-loader',
+  //resolve-url-loader may be chained before sass-loader if necessary
+  use: ['css-loader', 'sass-loader']
+})
+
+var cssConfig = isProd ? cssProd : cssDev;
+
+module.exports = {
+  ...
+  plugins: [
+    ...
+    new ExtractTextPlugin({
+      filename: 'style.css',
+      disable: !isProd
+    }),
+    ...
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: cssConfig
+      },
+      ...
+    ]
+  }
+};
+```
+
+只要能区别出不同的环境，使用不同的配置内容就可以了。
+
+现在就可以放心地使用 npm run dev 和 npm run prod 命令了，再也不用临时关掉一些插件了。
