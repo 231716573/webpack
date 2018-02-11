@@ -365,3 +365,42 @@ devServer: {
   hot: true
 }
 ```
+
+然后现在看到的 webpack.config.js 如下
+```
+const webpack = require('webpack');
+...
+
+let pathsToClean = [
+	'dist'
+]
+
+module.exports = {
+	entry: './src/app.js',
+	...
+	plugins: [
+		new CleanWebpackPlugin(pathsToClean),
+		new ExtractTextPlugin("styles.css"),
+		new HtmlWebpackPlugin({
+			template: './src/zhongqiu.html',
+			filename: 'index.html',
+			hash: true
+		}),
+		// 这两行是新增的
+		new webpack.NamedModulesPlugin(),
+		new webpack.HotModuleReplacementPlugin()
+	],
+	...
+}
+```
+
+文件名还不能用 chunkhash 了，它说要用 hash 来代替 chunkhash。  
+
+我们来改一下：
+```
+filename: '[name].[chunkhash].js'
+```
+变成
+```
+filename: '[name].[hash].js'
+```
