@@ -206,48 +206,91 @@ webpack教程
 
 
 ### 7. 初识 webpack-dev-server
-	我们之前使用 webpack -d --watch 来在开发环境下编译静态文件，但是这个功能，完全可以用 webpack-dev-server 来代替。
+我们之前使用 webpack -d --watch 来在开发环境下编译静态文件，但是这个功能，完全可以用 webpack-dev-server 来代替。
 
-	除此之外， webpack-dev-server 还有其他的功能，比如在本地上开启服务，打开浏览器等。
+除此之外， webpack-dev-server 还有其他的功能，比如在本地上开启服务，打开浏览器等。
 
-	```
-	// 先全局安装
-	npm install -g webpack-dev-server
-	npm install --save-dev webpack-dev-server
-	```
+```
+// 先全局安装
+npm install -g webpack-dev-server
+npm install --save-dev webpack-dev-server
+```
 
-	然后运行命令：
-	webpack-dev-server
+然后运行命令：
+webpack-dev-server
 
 
-	现在我们用浏览器打开 localhost:8080 也可以看到以前的效果。
+现在我们用浏览器打开 localhost:8080 也可以看到以前的效果。
 
-	// 默认是运行在 8080 端口，这个我们可以改。
+// 默认是运行在 8080 端口，这个我们可以改。
 
-	修改 webpack.config.js 为：
-	```
-	var HtmlWebpackPlugin = require('html-webpack-plugin');
-	const ExtractTextPlugin = require('extract-text-webpack-plugin');
+修改 webpack.config.js 为：
+```
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-	module.exports = {
-	  entry: './src/app.js',
-	  ...
-	  devServer: {
-	    port: 9000,
-	    open: true    // 运行 webpack-dev-server 的时候就自动打开浏览器。
-	  },
-	  ...
-	};
-	```
+module.exports = {
+  entry: './src/app.js',
+  ...
+  devServer: {
+    port: 9000,
+    open: true    // 运行 webpack-dev-server 的时候就自动打开浏览器。
+  },
+  ...
+};
+```
 
 
 
 ### 8. babel 入门指南
-	可能你不懂 babel 是什么，你可以把它理解为编译器，它能把 react 代码转成一般浏览器可读可执行的代码，
-	通常可以用它来转化 react 或 vue 这样的前端代码，
-	或者把 es6 代码转成普通的 javascript 代码等等。
+可能你不懂 babel 是什么，你可以把它理解为编译器，它能把 react 代码转成一般浏览器可读可执行的代码，
+通常可以用它来转化 react 或 vue 这样的前端代码，
+或者把 es6 代码转成普通的 javascript 代码等等。
 
+8.1 安装插件，运行下面的命令
+```
+npm install --save-dev babel-core babel-preset-stage-2 babel-preset-env
+```
 
+8.2 创建 .babelrc 文件。
+```
+{
+  "presets": ["env", "stage-2"]
+}
+```
+
+8.3 安装babel-loader，把es6转成es5
+```
+npm install --save-dev babel-loader
+```
+
+webpack.config.js
+```
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+module.exports = {
+  entry: './src/app.js',
+  ...
+  module: {
+		rules: [
+    	{
+      	test: /\.css$/,
+      	use: ExtractTextPlugin.extract({
+      		fallback: 'style-loader',
+      		use: ['css-loader']
+      	})
+    	},
+    	// 这两行是处理 js/es6 相关的内容
+    	{
+    		test: /\.js$/,
+    		loader: 'babel-loader',
+    		exclude: /node_modules/
+    	}
+    ]
+	}
+};
+```
 
 ### 9. 用 clean-webpack-plugin 来清除文件
 
@@ -258,4 +301,38 @@ webpack教程
 安装：
 ```
 npm i clean-webpack-plugin --save-dev
+```
+
+webpack.config.js
+```
+const path = require('path')
+...
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+let pathsToClean = [
+	'dist'
+]
+
+module.exports = {
+	entry: './src/app.js',
+	...
+	plugins: [
+		new CleanWebpackPlugin(pathsToClean),
+		new ExtractTextPlugin("styles.css"),
+		new HtmlWebpackPlugin({
+			template: './src/zhongqiu.html',
+			filename: 'index.html',
+			hash: true
+		})
+	],
+	...
+}
+```
+
+现在运行 npm run prod 试试，只有下面的文件：
+```
+dist
+├── app.bundle.0e380cea371d050137cd.js
+├── index.html
+└── style.css
 ```
