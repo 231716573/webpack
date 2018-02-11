@@ -1,8 +1,8 @@
 # webpack
 webpack教程
 
-github提交代码不用输入账号密码：
-1. 在 .git 文件夹里面的 config 文件最后添加：   
+### github提交代码不用输入账号密码：
+在 .git 文件夹里面的 config 文件最后添加：   
 ``` 
 [credential]
 	helper = store
