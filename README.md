@@ -243,3 +243,53 @@ webpack教程
 	};
 	```
 
+
+### 8. babel 入门指南
+	可能你不懂 babel 是什么，你可以把它理解为编译器，它能把 react 代码转成一般浏览器可读可执行的代码，
+	通常可以用它来转化 react 或 vue 这样的前端代码，
+	或者把 es6 代码转成普通的 javascript 代码等等。
+
+	8.1 安装插件，运行下面的命令
+	```
+	npm install --save-dev babel-core babel-preset-stage-2 babel-preset-env
+	```
+
+	8.2 创建 .babelrc 文件。
+	```
+	{
+	  "presets": ["env", "stage-2"]
+	}
+	```
+
+	8.3 安装babel-loader，把es6转成es5
+	```
+	npm install --save-dev babel-loader
+	```
+
+	webpack.config.js
+	```
+	var HtmlWebpackPlugin = require('html-webpack-plugin');
+	const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+	module.exports = {
+	  entry: './src/app.js',
+	  ...
+	  module: {
+			rules: [
+	    	{
+	      	test: /\.css$/,
+	      	use: ExtractTextPlugin.extract({
+	      		fallback: 'style-loader',
+	      		use: ['css-loader']
+	      	})
+	    	},
+	    	// 这两行是处理 js/es6 相关的内容
+	    	{
+	    		test: /\.js$/,
+	    		loader: 'babel-loader',
+	    		exclude: /node_modules/
+	    	}
+	    ]
+		}
+	};
+	```
