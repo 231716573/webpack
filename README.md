@@ -211,7 +211,7 @@ webpack教程
 
 	除此之外， webpack-dev-server 还有其他的功能，比如在本地上开启服务，打开浏览器等。
 
-	```javascript
+	```
 	# 先全局安装
 	npm install -g webpack-dev-server
 	npm install --save-dev webpack-dev-server
@@ -228,7 +228,7 @@ webpack教程
 	// 默认是运行在 8080 端口，这个我们可以改。
 
 	webpack.config.js
-	```javascript
+	```
 	var HtmlWebpackPlugin = require('html-webpack-plugin');
 	const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -251,7 +251,7 @@ webpack教程
 	或者把 es6 代码转成普通的 javascript 代码等等。
 
 	8.1 安装插件，运行下面的命令
-	```javascript
+	```
 	npm install --save-dev babel-core babel-preset-stage-2 babel-preset-env
 	```
 
