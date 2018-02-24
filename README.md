@@ -555,6 +555,7 @@ devtool 的7种模式：
 6、 ```eval-source-map```     // 每个 module 会通过 eval() 来执行，并且生成一个 DataUrl 形式的SourceMap   
 7、 ```cheap-module-source-map```   // 生成一个没有列信息(column-mappings) 的SourceMap 文件，包含 loader 的sourcemap   
 
+
 ### 14. 如何打包图片
 安装 file-loader
 ```
