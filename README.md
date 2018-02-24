@@ -1,6 +1,13 @@
 # webpack
 webpack教程
 
+### webpack 命令汇总：
+* webpack --watch   // 监听变动并自动打包
+* webpack -d   // 生成 source map 映射文件，告知哪些模块被最终打包到哪里了其中的
+* webpack -p   // 压缩代码成一行
+* webpack --progress   // 显示进度条
+* webpack --config XXX.js   // 使用另一份配置文件（比如webpack.config2.js）来打包
+
 ### github提交代码不用输入账号密码：
 在 .git 文件夹里面的 config 文件最后添加：   
 ``` 
