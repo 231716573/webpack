@@ -41,8 +41,7 @@ webpack -v  // 输出webpack 的版本
 
 ### 3. 创建配置文件 webpack.config.js
 
-	内容如下：
-
+内容如下：
 ```
 module.exports = {
   entry: './src/app.js',
@@ -51,11 +50,10 @@ module.exports = {
   }
 }
 ```
-
-	简单解释一下： 
-		1、entry 表示源文件，output 这边表示的是输出的目标文件。
-	用法：
-		直接在终端上输入 webpack 就可以了。webpack 命令会去找 webpack.config.js 文件，并读取它的内容（源文件和目标文件），最后进行相应的处理。
+简单解释一下： 
+	1、entry 表示源文件，output 这边表示的是输出的目标文件。
+用法：
+	直接在终端上输入 webpack 就可以了。webpack 命令会去找 webpack.config.js 文件，并读取它的内容（源文件和目标文件），最后进行相应的处理。
 
 
 ### 4. 改造 package.json 的scripts 部分
