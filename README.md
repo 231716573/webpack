@@ -52,7 +52,7 @@ module.exports = {
 ```
 简单解释一下： 
 	1、entry 表示源文件，output 这边表示的是输出的目标文件。   
-	
+
 用法：
 	直接在终端上输入 webpack 就可以了。webpack 命令会去找 webpack.config.js 文件，并读取它的内容（源文件和目标文件），最后进行相应的处理。
 
@@ -85,10 +85,11 @@ module.exports = {
     "prod": "webpack -p"
   },
 ```
-	用法：```npm run dev```  和   ```npm run prod```
-	会发现 ```npm run dev``` 和 ```webpack -d --watch``` 的效果是一样的。
+用法：```npm run dev```  和   ```npm run prod```
+会发现 ```npm run dev``` 和 ```webpack -d --watch``` 的效果是一样的。
 
-	-d 这个参数之前没介绍过，它的意思就是说包含 source maps，这个有什么用呢，就是让你在用浏览器调试的时候，可以很方便地定位到源文件
+-d 这个参数之前没介绍过，它的意思就是说包含 source maps   
+这个有什么用呢，就是让你在用浏览器调试的时候，可以很方便地定位到源文件
 
 
 ### 5. webpack 插件 html-webpack-plugin
