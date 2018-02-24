@@ -355,7 +355,7 @@ dist
 
 模块热替换 是什么意思？   
 
-以前我们使用的 webpack --watch 或 webpack-dev-server 的功能是监听文件改变，就自动刷新浏览器，    
+以前我们使用的 ```webpack --watch``` 或 ```webpack-dev-server``` 的功能是监听文件改变，就自动刷新浏览器，    
 而这个模块热替换不用刷新浏览器，它是只让修改到的模块，才会在浏览器上发生相应的变化，就是生效，而不是重新刷新浏览器。  
 
 为什么要这么做呢？有时候模块越多，改得频繁，刷新起来还是很慢的，效率低呀。   
@@ -458,7 +458,8 @@ new ExtractTextPlugin({
 
 #### 12.1. 增加环境变量
 
-首先来看一下之前的开发环境和生产环境分别使用的编译命令：
+首先来看一下之前的开发环境和生产环境分别使用的编译命令：   
+
 package.json
 ```
 "scripts": {
@@ -483,8 +484,8 @@ package.json
 var isProd = process.env.NODE_ENV === 'production'; // true or false
 ``` 
 process.env.NODE_ENV 就能得到之前设置的变量，    
-如果运行的是 npm run prod，那么process.env.NODE_ENV 的值就是 production，那 isProd 就是 true，    
-如果运行的是 npm run dev，isProd 就是 false，因为 npm run dev 没有设置这个 NODE_ENV 这个环境变量嘛。
+如果运行的是 ```npm run prod```，那么process.env.NODE_ENV 的值就是 production，那 isProd 就是 true，    
+如果运行的是 ```npm run dev```，isProd 就是 false，因为 npm run dev 没有设置这个 NODE_ENV 这个环境变量嘛。
 
 我们把 webpack.config.js 中的代码更改如下：
 ```
@@ -524,7 +525,7 @@ module.exports = {
 
 只要能区别出不同的环境，使用不同的配置内容就可以了。
 
-现在就可以放心地使用 npm run dev 和 npm run prod 命令了，再也不用临时关掉一些插件了。
+现在就可以放心地使用 ```npm run dev``` 和 ```npm run prod``` 命令了，再也不用临时关掉一些插件了。
 
 
 ### 13. devtool: 'source-map' 是什么意思
@@ -546,13 +547,13 @@ module.exports = {
 
 devtool 的7种模式：   
 
-1、 eval                 // 每个module会封装到eval里包裹起来执行，并且在末尾追加注释   
-2、 source-map          // 生成一个SourceMap 文件   
-3、 hidden-source-map   // 和source-map 一样，但不会在 bundle 末尾注释   
-4、 inline-source-map   // 生成一个DataUrl 形式的 SourceMap 文件   
-5、 cleap-source-map    // 生成一个没有列信息(column-mappings) 的SourceMap 文件，不包含 loader 的sourcemap   
-6、 eval-source-map     // 每个 module 会通过 eval() 来执行，并且生成一个 DataUrl 形式的SourceMap   
-7、 cheap-module-source-map   // 生成一个没有列信息(column-mappings) 的SourceMap 文件，包含 loader 的sourcemap   
+1、 ```eval```                 // 每个module会封装到eval里包裹起来执行，并且在末尾追加注释   
+2、 ```source-map```          // 生成一个SourceMap 文件   
+3、 ```hidden-source-map```   // 和source-map 一样，但不会在 bundle 末尾注释   
+4、 ```inline-source-map```   // 生成一个DataUrl 形式的 SourceMap 文件   
+5、 ```cleap-source-map```    // 生成一个没有列信息(column-mappings) 的SourceMap 文件，不包含 loader 的sourcemap   
+6、 ```eval-source-map```     // 每个 module 会通过 eval() 来执行，并且生成一个 DataUrl 形式的SourceMap   
+7、 ```cheap-module-source-map```   // 生成一个没有列信息(column-mappings) 的SourceMap 文件，包含 loader 的sourcemap   
 
 ### 14. 如何打包图片
 安装 file-loader
@@ -593,7 +594,7 @@ use: [
 		}	
 	}	
 ]
-
+```
 #### 14.2 解析 html 代码里面的 img 标签
 安装 html-loader
 ```
@@ -610,7 +611,7 @@ webpack.config.js :
 		}
 	}]
 }
-
+```
 #### 14.3 压缩图片
 有时图片太大，输出到生产环境的时候，希望可以让图片文件的体积小点，webpack可以自动压缩图片   
 安装 image-webpack-loader   
