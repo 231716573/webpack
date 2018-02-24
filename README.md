@@ -46,6 +46,52 @@ webpack -v  // 输出webpack 的版本
 ```
 
 
+### 附加3. 初始化项目
+#### 1.用 npm init 初始化项目
+```
+# 随便进一个目录
+$ cd ~/codes
+# 创建一个存放 webpack 项目的目录，名为 hello-webpack
+$ mkdir hello-webpack
+$ npm init
+```
+之后你会看到会提示你输入一些内容，你不用管，直接全部回车：   
+```
+name: (hello-wepback)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+```
+最后，你会发现 hello-webpack 目录下多出了一个名为 package.json 的文件。   
+内容如下：
+```
+{
+  "name": "hello-wepback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+#### 2. 集成 webpack
+我们在终端上输入如下命令：   
+```
+npm install --save-dev webpack
+```
+我们再来看看 package.json 这个文件的内容。多了下面这几行：   
+```
+"devDependencies": {
+  "webpack": "^3.8.1"
+}
+``` 
+
+
 ### 3. 创建配置文件 webpack.config.js
 
 内容如下：
