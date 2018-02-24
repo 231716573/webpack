@@ -213,7 +213,7 @@ module.exports = {
 ```
 
 ### 7. 初识 webpack-dev-server
-我们之前使用 webpack -d --watch 来在开发环境下编译静态文件，但是这个功能，完全可以用 webpack-dev-server 来代替。
+我们之前使用 ```webpack -d --watch``` 来在开发环境下编译静态文件，但是这个功能，完全可以用 ```webpack-dev-server``` 来代替。
 
 除此之外， webpack-dev-server 还有其他的功能，比如在本地上开启服务，打开浏览器等。
 
@@ -224,7 +224,7 @@ npm install --save-dev webpack-dev-server
 ```
 
 然后运行命令：
-webpack-dev-server
+```webpack-dev-server```
 
 
 现在我们用浏览器打开 localhost:8080 也可以看到以前的效果。
