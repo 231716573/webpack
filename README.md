@@ -173,7 +173,8 @@ module.exports = {
 };
 ```
 
-6.2.3 用 extract-text-webpack-plugin 把 CSS 分离成文件
+6.2.3 用 extract-text-webpack-plugin 把 CSS 分离成文件   
+
 有时候我们要把 SASS 或 CSS 处理好后，放到一个 CSS 文件中，用这个插件就可以实现。
 ```
 npm install --save-dev extract-text-webpack-plugin
