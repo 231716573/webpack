@@ -98,12 +98,11 @@ module.exports = {
 ```
 npm install html-webpack-plugin --save-dev
 ```
-
-	安装成功后，package.json 这个文件会多出一行 "html-webpack-plugin": "^2.30.1"
+安装成功后，package.json 这个文件会多出一行 ```"html-webpack-plugin": "^2.30.1"```
 
 #### 5.2. 用 html-webpack-plugin 这个插件来自动生成 dist/index.html
 
-	把 webpack.config.js 文件改一下
+把 webpack.config.js 文件改一下
 ```
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -117,10 +116,10 @@ module.exports = {
 };
 ```
 #### 5.3. html-webpack-plugin功能
-	* 3.1 template   // 有时候我们要让 index.html 根据我们的意愿来生成。就是说它的内容是我们自己定的  
-	* 3.2 filename   // 默认情况下生成的 html 文件叫 index.html，但有时候你不想叫这个名字，可以改
-	* 3.3 minify: {collapseWhitespace: true,}  //这个可以把生成的 index.html 文件的内容的没用空格去掉，减少空间。
-	* 3.4 hash       // 为了更好的 cache，可以在文件名后加个 hash。
+* 3.1 template   // 有时候我们要让 index.html 根据我们的意愿来生成。就是说它的内容是我们自己定的  
+* 3.2 filename   // 默认情况下生成的 html 文件叫 index.html，但有时候你不想叫这个名字，可以改
+* 3.3 minify: {collapseWhitespace: true,}  //这个可以把生成的 index.html 文件的内容的没用空格去掉，减少空间。
+* 3.4 hash       // 为了更好的 cache，可以在文件名后加个 hash。
 
 ```
 plugins: [
@@ -137,15 +136,15 @@ plugins: [
 
 ### 6. 使用 loader 处理 CSS 和 Sass、Stylus、Less 等 CSS 扩展语言
 #### 6.1. 什么是 loader
-	说白了，就是 loader 类似于 task，能够处理文件，比如把 Scss 转成 CSS，TypeScript 转成 JavaScript 等。
+说白了，就是 loader 类似于 task，能够处理文件，比如把 Scss 转成 CSS，TypeScript 转成 JavaScript 等。
 
 #### 6.2. 用 css-loader 和 style-loader 处理 CSS
-	6.2.1 安装 css-loader style-loader
+6.2.1 安装 css-loader style-loader
 ```
 npm install --save-dev css-loader style-loader
 ```
 	
-	6.2.2 处理 webpack.config.js
+6.2.2 处理 webpack.config.js
 ```
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -174,12 +173,12 @@ module.exports = {
 };
 ```
 
-	6.2.3 用 extract-text-webpack-plugin 把 CSS 分离成文件
-	有时候我们要把 SASS 或 CSS 处理好后，放到一个 CSS 文件中，用这个插件就可以实现。
+6.2.3 用 extract-text-webpack-plugin 把 CSS 分离成文件
+有时候我们要把 SASS 或 CSS 处理好后，放到一个 CSS 文件中，用这个插件就可以实现。
 ```
 npm install --save-dev extract-text-webpack-plugin
 ```
-	修改 webpack.config.js 为：
+修改 webpack.config.js 为：
 ```
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
