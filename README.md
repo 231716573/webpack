@@ -51,7 +51,8 @@ module.exports = {
 }
 ```
 简单解释一下： 
-	1、entry 表示源文件，output 这边表示的是输出的目标文件。
+	1、entry 表示源文件，output 这边表示的是输出的目标文件。   
+	
 用法：
 	直接在终端上输入 webpack 就可以了。webpack 命令会去找 webpack.config.js 文件，并读取它的内容（源文件和目标文件），最后进行相应的处理。
 
