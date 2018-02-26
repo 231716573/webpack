@@ -1,6 +1,11 @@
 # webpack
 webpack教程
 
+### 参考网站：
+* https://www.rails365.net/articles/webpack-3-ling-ji-chu-ru-men-jiao-cheng-1-jie-shao
+* http://www.cnblogs.com/hezihao/p/8058025.html
+* webpack2.0 视频教程: http://v.youku.com/v_show/id_XMjY4MzM5MjM2OA==.html?spm=a2hzp.8253876.0.0&f=49394464
+
 ### webpack 命令汇总：
 * webpack --watch   // 监听变动并自动打包
 * webpack -d   // 生成 source map 映射文件，告知哪些模块被最终打包到哪里了其中的
