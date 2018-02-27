@@ -230,6 +230,52 @@ module.exports = {
   }
 };
 ```
+##### 6.2.2 附加---处理 Stylus
+```
+npm install --save-dev stylus-loader stylus
+```
+处理 webpack.config.js
+```
+...
+module: {
+  rules: [
+    {
+      test: /\.css$/,
+      use: extractPlugin.extract({
+        fallback: "style-loader",
+        use: 'css-loader'
+      })
+    }, {
+      test: /\.styl$/,
+      use: extractPlugin.extract({
+        fallback: 'style-loader',
+        use: [{
+          loader: 'css-loader'
+        }, {
+          loader: 'stylus-loader'
+        }]
+      })
+    }, {
+      test: /\.(gif|png|jpe?g|svg)$/i,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 500000
+          }
+        }
+      ]
+    }, {
+      test: /\.html$/,
+      use: [{
+        loader: 'html-loader',
+        options: {}
+      }]
+    }
+  ]
+}
+```
+
 
 6.2.3 用 extract-text-webpack-plugin 把 CSS 分离成文件   
 
@@ -314,17 +360,11 @@ module.exports = {
 
 #### 8.1 安装插件，运行下面的命令
 ```
-npm install --save-dev babel-core babel-preset-stage-2 babel-preset-env
+npm install --save-dev babel-core babel-preset-es2015 babel-preset-react
 ```
 
-#### 8.2 创建 .babelrc 文件。
-```
-{
-  "presets": ["env", "stage-2"]
-}
-```
 
-#### 8.3 安装babel-loader，把es6转成es5
+#### 8.2 安装babel-loader，把es6转成es5
 ```
 npm install --save-dev babel-loader
 ```
@@ -348,9 +388,15 @@ module.exports = {
     	},
     	// 这两行是处理 js/es6 相关的内容
     	{
-    		test: /\.js$/,
-    		loader: 'babel-loader',
-    		exclude: /node_modules/
+    		test: /\.(jsx|js)$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              'es2015', 'react'
+            ]
+          }
+        }
     	}
     ]
 	}
@@ -615,9 +661,9 @@ devtool 的7种模式：
 
 
 ### 14. 如何打包图片
-安装 file-loader
+安装 url-loader
 ```
-npm install file-loader --save-dev
+npm install url-loader --save-dev
 ```
 此时 webpack.config.js
 ```
@@ -628,75 +674,28 @@ module.exports = {
 		rule: [
 			...
 			{
-				test: /\.(gif|png/|jpe?g|svg)$/,
-				use: [
-					{
-						loader: 'file-loader'
-					}
-				]
+				test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 500000
+            }
+          }
+        ]
 			}
 		]
 	}
 }
 ```
 
-#### 14.1 file-loader 的参数
-其实，file.loader 是可以带参数的，如下所示
-```
-test: /\.(gif|png|jpe?g|svg)$/i    // 表示可以处理大部分图片的格式
-use: [
-	{
-		loader: 'file-loader',
-		options: {
-			name: '[name].[ext]',  // [name] 代表文件名，[ext] 代表文件拓展名
-			outputPath: 'images/'  // output 是输出的路径
-		}	
-	}	
-]
-```
-#### 14.2 解析 html 代码里面的 img 标签
+#### 14.1 解析 html 代码里面的 img 标签
 安装 html-loader
 ```
 npm install html-loader --save-dev
 ```
 webpack.config.js :
 ```
-{
-	test: /\.html$/,
-	use: [{
-		loader: 'html-loader',
-		options: {
-			minimize: true
-		}
-	}]
-}
-```
-#### 14.3 压缩图片
-有时图片太大，输出到生产环境的时候，希望可以让图片文件的体积小点，webpack可以自动压缩图片   
-安装 image-webpack-loader   
-```
-npm install image-webpack-loader --save-dev
-```
-此时修改webpack.config.js
-```
-{
-	test: /\.(gif|png|jpe?g|svg)$/i,
-	use: [
-		{
-			loader: 'file-loader',
-			options: {
-				name: '[name].[ext]',
-				outputPath: 'images/'
-			}
-		},
-		{
-			loader: 'image-webpack-loader',
-			options: {
-				bypassOnDebug: true
-			}
-		}
-	]
-},
 {
 	test: /\.html$/,
 	use: [{
