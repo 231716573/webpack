@@ -1,0 +1,15 @@
+
+/*添加学校*/
+#login { width: 1200px; height: 550px; background-color: #fff;margin: 20px auto; }
+#login .login_title { height: 56px; line-height: 56px; color: #333; font-size: 18px; border-bottom:1px solid #e6e6e6; }
+#login .login_title a { margin: 0px 15px; display: inline-block; *zoom:1; color: #999; font-size: 14px; padding-left: 13px; background: url(../images/turnright.png) left center no-repeat; }
+#login .login_contain { margin:30px 70px; color: #333;}
+#login .login_contain span { display: inline-block; *zoom:1; width:120px; }
+#login .login_contain input[type=text] { width: 400px; height: 28px; padding: 5px 10px; border:1px solid #e0e0e0; border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px; }
+input::-webkit-input-placeholder { color: #b2b2b2; } 
+input:-moz-placeholder { color: #b2b2b2; } 
+input::-moz-placeholder { color: #b2b2b2; } 
+input:-ms-input-placeholder { color: #b2b2b2; } 
+#login .login_contain input[type=button] { cursor: pointer; width: 158px; margin-right: 4px; height:48px; font-size: 18px; background-color: #c2172a; color: #fff; border:1px solid #d9d9d9;  border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px;}
+#login .login_contain input.login_cancel { background-color: #9c9697; }
+

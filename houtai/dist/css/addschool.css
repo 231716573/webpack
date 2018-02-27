@@ -1,0 +1,60 @@
+*,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+padding: 0;
+margin: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+fieldset,img {
+border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var,i {
+font-weight: normal;
+font-style: normal;
+}
+ol,ul {
+list-style: none;
+}
+caption,th {
+text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+font-weight: normal;
+font-size: 100%;
+}
+a { color:#666666; text-decoration:none; }
+a:hover { color: red; }
+body { background-color: #e6e6e6; width: 100%; color:#666666; font-family:"\5FAE\8F6F\96C5\9ED1";font-size: 14px;  }
+input { outline: none; }
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}/*logo处*/
+#bar { height: 143px;  background-color:#fff; }
+#bar .bar_logo { width: 1200px;overflow: hidden; margin: 0px auto; position:relative; }
+#bar .bar_logo h1 { line-height: 142px; height: 90px; }
+#bar .bar_logo img { float: left; margin-top: 25px; margin-right: 10px; }
+#bar .bar_admin { position: absolute; right: 0px; top:30px; font-size: 12px; color: #333; }
+#bar .bar_admin a { padding: 3px 5px; border:1px solid #d9d9d9; border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px; margin-left:5px;}
+.bar_manage { width: 1200px;overflow: hidden; margin: 10px auto 0px; }
+.bar_manage a { margin-left: 14px; width:80px; height:40px; display: inline-block; *zoom:1; color: #333; font-size: 18px; text-align: center; line-height: 40px; border-bottom: 4px solid #fff; }
+.bar_manage a.active,.bar_manage a:hover { border-color: #c2172a; }
+
+.bd { border-bottom:1px solid #e6e6e6; }
+
+
+
+
+/*添加学校*/
+#login { width: 1200px; height: 550px; background-color: #fff;margin: 20px auto; }
+#login .login_title { height: 56px; line-height: 56px; color: #333; font-size: 18px; border-bottom:1px solid #e6e6e6; }
+#login .login_title a { margin: 0px 15px; display: inline-block; *zoom:1; color: #999; font-size: 14px; padding-left: 13px; background: url(images/turnright.png) left center no-repeat; }
+#login .login_contain { margin:30px 70px; color: #333;}
+#login .login_contain span { display: inline-block; *zoom:1; width:120px; }
+#login .login_contain input[type=text] { width: 400px; height: 28px; padding: 5px 10px; border:1px solid #e0e0e0; border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px; }
+input::-webkit-input-placeholder { color: #b2b2b2; } 
+input:-moz-placeholder { color: #b2b2b2; } 
+input::-moz-placeholder { color: #b2b2b2; } 
+input:-ms-input-placeholder { color: #b2b2b2; } 
+#login .login_contain input[type=button] { cursor: pointer; width: 158px; margin-right: 4px; height:48px; font-size: 18px; background-color: #c2172a; color: #fff; border:1px solid #d9d9d9;  border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px;}
+#login .login_contain input.login_cancel { background-color: #9c9697; }
+

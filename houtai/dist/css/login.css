@@ -1,0 +1,43 @@
+*,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,input,textarea,p,blockquote,th,td {
+padding: 0;
+margin: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+fieldset,img {
+border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var,i {
+font-weight: normal;
+font-style: normal;
+}
+ol,ul {
+list-style: none;
+}
+caption,th {
+text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+font-weight: normal;
+font-size: 100%;
+}
+a { color:#666666; text-decoration:none; }
+a:hover { color: red; }
+body { background-color: #e6e6e6; width: 100%; color:#666666; font-family:"\5FAE\8F6F\96C5\9ED1";font-size: 14px;  }
+input { outline: none; }
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}/*logo处*/
+#bar { height: 143px; line-height: 142px; background-color:#fff; }
+.bar_logo { width: 1200px;overflow: hidden; margin: 0px auto; }
+.bar_logo img { float: left; margin-top: 35px; margin-right: 10px; }
+
+/*登录框*/
+#login { width: 1200px; height: 550px; background-color: #fff;margin: 20px auto; text-align: center; }
+#login .login_title { height:106px; line-height: 106px; border-bottom:1px solid #e6e6e6; font-size: 30px; color: #4c4c4c; }
+#login .login_contain { margin-top:30px; }
+#login .login_contain span { font-size: 14px; color: #333; display: inline-block; width:80px; text-align: left; }
+#login .login_contain input[type=text] { width:306px; padding:10px; border:1px solid #e0e0e0; border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px; }
+#login .login_contain input[type=button] { cursor: pointer; width: 158px; margin-right: 4px; height:48px; font-size: 18px; background-color: #c2172a; color: #fff; border:1px solid #d9d9d9;  border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px;}
+#login .login_contain input.login_cancel { background-color: #9c9697; }

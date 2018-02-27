@@ -1,0 +1,42 @@
+#login { width:1200px; margin:20px auto; background-color: #fff; }
+#login .login_search { height: 60px; line-height: 56px; color: #333; font-size: 18px; }
+#login .login_search .login_search_first { margin: 0px 30px 0px 15px; display: inline-block; *zoom:1; color: #333; font-size: 18px;  }
+#login .login_search input {width: 340px; padding: 10px 10px; border:1px solid #ccc;border-radius:20px;-webkit-border-radius:20px; -moz-border-radius:20px;}
+#login .login_search .login_search_last { position: relative; width: 340px;}
+#login .login_search .login_search_last a { background: url(../images/search.png) center center no-repeat; display: inline-block; position: absolute; *zoom:1; right: 8px; top:0px; width:30px; height: 30px; }
+
+#school_add,#school_list { margin:0px 10px; }
+#school_add a {border-radius:7px;-webkit-border-radius:7px; -moz-border-radius:7px; display: inline-block; margin:15px 5px; width:98px; text-align: center; height: 34px; line-height: 34px; background-color: #fff; border:1px solid #d9d9d9; color: #333; font-size: 16px; }
+#school_add a:hover { background-color: #e6e6e6; }
+
+/*列表*/
+#school_list .school_list { border-top: 1px solid #36c2bf;font-size: 12px; padding-bottom: 50px;}
+#school_list .school_list li { width:100%; text-align:center; overflow: hidden; height: 59px; line-height: 59px; color: #000; border-bottom: 1px solid #e6e6e6; }
+#school_list .school_list li.school_list_title { width:100%; text-align:center; height: 34px; line-height: 34px; border-bottom:none; background: #f2f2f2; color: #808080; }
+#school_list .school_list .school_list_div div,#school_list .school_list .school_list_divtitle div{ float: left; width:20%; word-wrap:break-word;word-break:break-all; }
+/*#school_list .school_list .school_list_div div:nth-child(4) { line-height: 20px; margin-top: 10px; text-align: left; }*/
+#school_list .school_list .school_list_div div a { color: #000; display: inline-block;  overflow: hidden; width: 100%; }
+#school_list .school_list .school_list_div div a:hover { color: red; }
+#school_list .school_list .school_list_div div span { display: inline-block; width:78px; margin:0px 5px; cursor: pointer; line-height: 28px; height: 28px;text-align: center; border:1px solid #d9d9d9; border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px;}  
+#school_list .school_list .school_list_div div span:hover { background-color: #e6e6e6; }
+
+/*页码*/
+.pagechoose { padding-bottom: 70px;  } 
+.pagechoose li { float: left; padding: 4px 9px; color: #666; margin-right: 2px; background-color: #fff; cursor: pointer;  }
+.pagechoose li:hover { background-color: #14a6a3; color: #fff; }
+.pagechoose .thispage { background-color: #14a6a3; color: #fff; }
+
+/*收费页面-筛选时间*/
+#school_time { margin:10px 10px 20px; }
+#school_time input[type=text] { padding:5px; width:140px; border:1px solid #d9d9d9; border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px; }
+#school_time input[type=button] { cursor: pointer; padding:5px 20px; margin-left: 10px; border:1px solid #d9d9d9; background-color: #fff; border-radius:5px;-webkit-border-radius:5px; -moz-border-radius:5px; }
+#school_time span { font-size: 12px; color: #000; margin:0px 10px; }
+
+
+/*list页面*/
+#school_list .school_list li .list_divtitle_div1 { width:210px; }
+#school_list .school_list li .list_divtitle_div2,#school_list .school_list li .list_divtitle_div3,#school_list .school_list li .list_divtitle_div5,#school_list .school_list li .list_divtitle_div7 { width:90px; }
+#school_list .school_list li .list_divtitle_div4 { width:260px; }
+#school_list .school_list li .list_divtitle_div6 { width:130px; }
+#school_list .school_list li .list_divtitle_div8 { width:220px; }
+
