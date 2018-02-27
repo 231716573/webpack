@@ -1,0 +1,207 @@
+/* v1.0 | 20080212 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,figure{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+}
+body{
+	line-height:1;
+	font-family:"微软雅黑";	
+}
+ol, ul{
+	list-style:none;
+}
+blockquote, q{
+	quotes:none;
+}
+blockquote:before, 
+blockquote:after,
+q:before, q:after{
+	content:'';
+	content:none;
+}
+
+/* remember to define focus styles! */
+:focus{
+	outline:0;
+}
+
+/* remember to highlight inserts somehow! */
+ins{
+	text-decoration:none;
+}
+del{
+	text-decoration:line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{text-decoration:none;}
+
+i,b,em,strong,h1,h2,h3,h4{font-weight:normal;font-style:normal;}
+
+img{display:inline-block;max-width:100%;height:auto;}
+
+.clearfix:after {
+     content:".";
+     display:block;
+     height:0;
+     clear:both;
+     visibility:hidden;
+}
+.clearfix{display:inline-block;}
+/* Hide from IE Mac */
+.clearfix{display:block;}
+/* End hide from IE Mac */
+/* end of clearfix */
+
+/* 公共 */
+.mtb24{margin:24px 0;}
+
+/* 主页背景 */
+.main-bg{background:#237ff2 url(../images/index-bg.png) no-repeat;background-size:100%;position:relative;}
+
+/* 排行榜 */
+.ranking{background:url(../images/ranking-img.gif) left center no-repeat;background-size:20px 20px;height:20px;line-height:20px;padding-left:30px;position:absolute;top:16px;right:20px;}
+.ranking a{font-size:14px;color:#000;}
+
+/* 主页标题 */
+.title{width:240px;border:1px solid #040000;border-radius:4px;background-color:#fff;padding:16px 20px;font-size:24px;color:#ea1919;font-weight:bold;text-align:center;position:absolute;top:60px;left:50%;margin-left:-141px;}
+
+/* 主页列表 */
+.main-data-list{margin:0 10px 30px 10px;position:relative;top:500px;}
+.main-data-list li{border-bottom:1px solid #6fa5e9;height:60px;line-height:60px;background:url(../images/right.png) right center no-repeat;background-size:10px  18px;}
+.main-data-list strong{float:left;width:4em;background:url(../images/route.png) 4px center no-repeat;background-size:14px 18px;padding-left:24px;font-size:15px;color:#fff;}
+.main-data-list i{float:left;font-size:16px;color:#fff;width:18em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.main-data-list a{display:block;}
+
+/* 任务线路列表 */
+.games-data-list{margin:20px;margin-bottom:100px;}
+.games-data-list li{border:1px solid #dbdbdb;border-radius:4px;margin-bottom:10px;height:50px;line-height:50px;clear:both;}
+.games-data-list strong{width:4em;float:left;margin-left:10px;font-size:16px;color:#181818;}
+.games-data-list i{width:16em;float:left;font-size:16px;color:#5f6772;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.games-data-list em{float:right;width:30px;background-color:#e8e8e8;height:50px;}
+.games-data-list b{width:10px;display:block;line-height:12px;font-size:12px;color:#a3a3a3;margin:0 auto;}
+.games-data-list span{display:block;width:10px;height:10px;background:#ee7320 url(../images/true.png) center no-repeat;background-size:7px 5px;border-radius:50%;margin:1px auto;display:none;}
+.games-data-list a{display:block;}
+.games-data-list .d{display:block;}
+.games-data-list .active{background-color:#2778dd;}
+.games-data-list .active strong,
+.games-data-list .active i{color:#fff;}
+.games-data-list .mt6{margin-top:6px;}
+.games-data-list .em-active{background-color:#f6ea30;}
+.games-data-list .em-active b{color:#ee721f;}
+
+/* 排行榜列表 */
+.ranking-data-list{margin:0 12px;}
+.ranking-data-list li{border:1px solid #dfdfdf;border-radius:4px;margin-top:12px;padding:14px;position:relative;}
+.ranking-data-list img{width:40px;height:40px;border-radius:50%;float:left;margin-right:10px;}
+.ranking-data-list h3{font-size:14px;color:#000;margin-top:4px;}
+.ranking-data-list .i{font-size:12px;color:#bbb;margin-top:6px;}
+.ranking-data-list .time-1{height:1em;line-height:1em;position:absolute;top:50%;margin-top:-0.5em;right: 50px;font-size:12px;color:#666;}
+.ranking-data-list .number-1{background-image:url(../images/triangle-1.png);}
+.ranking-data-list .number-2{background-image:url(../images/triangle-2.png);}
+.ranking-data-list .number-1,
+.ranking-data-list .number-2{width:38px;height:38px;background-size:38px 38px;position:absolute;top:0;right:0;border-top-right-radius:4px;}
+.ranking-data-list .number-1 b,
+.ranking-data-list .number-2 b{font-size:12px;color:#fff;position:absolute;top:7px;right:7px;}
+
+/* 任务线路计时 */
+.time{border:1px solid #fb7235;margin:0 34px;font-size:21px;color:#fb7235;border-radius:4px;}
+.time strong{background:url(../images/time.png) left center no-repeat;background-size:21px 18px;padding-left:26px;}
+
+/* 头部返回按钮 */
+.header-back{background:url(../images/back.png) center no-repeat;background-size:11px 16px;display:block;width:46px;height:46px;position:absolute;top:0;}
+
+/* 答题页文章内容 */
+.article{padding:38px 0 28px 0;margin:0 22px 0 22px;text-align:center;border-bottom:1px dashed #dedede;}
+.article h2{font-size:16px;color:#090909;}
+.article p{font-size:12px;color:#444444;text-align:left;line-height:1.8em;margin-top:30px;}
+
+/* 标签 */
+.label{font-size:12px;color:#000;}
+
+/* 文本框 */
+.text{width:339px;height:40px;line-height:40px;font-size:24px;border:1px solid #dedede;}
+
+/* 按钮 */
+.btn-bg-1{display:inline-block;width:50px;height:50px;background:url(../images/scan.png) center no-repeat;background-size:20px 20px;}
+
+.font-style-1{display:inline-block;position:relative;top:-20px;}
+
+.btn{height:50px;line-height:50px;margin-top:10px;}
+.btn2{width:240px;margin:0 auto;height:44px;line-height:44px;}
+
+.btn,
+.btn2{display:block;background-color:#2778dd;font-size:14px;color:#fff;text-align:center;border-radius:4px;}
+
+/* 表单 */
+.form{margin:0 22px;display:inline-block;padding:20px 0;border-bottom:1px dashed #dedede}
+
+/* 图片 */
+.figure{text-align:center;margin-bottom:100px;}
+.figure figcaption{font-size:12px;color:#666;margin:30px 0 12px 0;}
+.figure img{width:146px;height:103px;}
+
+/* 排行榜 */
+.user{background-color:#237ff2;height:60px;padding:38px 18px;position:relative;}
+.user img{width:60px;height:60px;float:left;border-radius:50%;margin-right:10px;}
+.user h3{font-size:16px;color:#fff;margin-top:10px;}
+.user i{font-size:14px;color:#b5d4fb;margin-left:10px;}
+.user .time-1{font-size:16px;color:#fff;margin-top:10px;}
+.user .number{width:53px;height:53px;text-align:center;background:url(../images/triangle.png) no-repeat;background-size:53px 53px;position:absolute;top:0;right:0;}
+.user .number b{font-size:16px;color:#fff;position:absolute;top:8px;right:8px;}
+
+/* 弹窗 */
+.window .bg{width:100%;position:absolute;top:0;background-color:#000;opacity:0.8;}
+.window .alert{width:312px;height:266px;background-color:#fff;position:fixed;top:50%;left:50%;margin-top:-133px;margin-left:-156px;text-align:center;}
+.window .alert h2{font-size:18px;color:#000;padding:30px 0 36px 0;position:relative;}
+.window .alert .close{display:block;width:30px;height:30px;background:#fe1b1b url(../images/close.png) center no-repeat;background-size:15px 15px;border-radius:50%;position:absolute;top:-10px;right:-10px;}
+.window .alert .ds-1{font-size:12px;color:#333;margin-bottom:20px;}
+.window .alert .ds-2{font-size:16px;color:#fe4b1b;margin-bottom:50px;}
+
+#header{background-color:#fff;height:46px;line-height:46px;text-align:center;border-bottom:1px solid #d3d3d3;}
+#main{width:414px;margin:0 auto;}
+#footer{ width: 100%;background-color: #fff;height: 40px;line-height: 40px;text-align: center;position: fixed;bottom: 0;border-top: 1px solid #d3d3d3;padding: 10px 0;}
+
+@media only screen and (max-width:375px) {
+	#main{width:375px;}
+	.main-data-list{top:450px;}
+	.main-data-list i{width:16em;}
+	.text{width:300px;}
+}
+
+@media only screen and (max-width:360px) {
+	#main{width:360px;}
+	.main-data-list{top:430px;}
+	.main-data-list i{width:15em;}
+	.text{width:285px;}
+}
+
+@media only screen and (max-width:320px) {
+	#main{width:320px;}
+	.main-data-list{top:380px;}
+	.main-data-list i{width:12em;}
+	.games-data-list i{width:10em;}
+	.text{width:245px;}
+}
+
+.am-icon-chevron-left:before {
+	content: "<" !important;
+}
