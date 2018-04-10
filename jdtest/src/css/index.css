@@ -1,0 +1,218 @@
+
+.top { 
+  height: 180px; 
+  width: 100%; 
+  overflow: hidden; 
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+.navigator {
+  width: 100%;
+  padding: 5px 0;
+}
+.navigator ul li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 13px;
+  background: #212427;
+}
+.navigator ul li a {
+  color: #686868;
+}
+.navigator ul li img {
+  width: 50%;
+}
+.navigator ul li span {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 15px;
+}
+.recommend .title{
+  margin:10px 0 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  clear: both;
+}
+.recommend .title div {
+  flex: 1;
+  text-align: center;
+  height: 44px;
+  line-height: 44px;
+  background: #212427;
+  color: #666;
+  border-top:2px solid #212427;
+  font-size: 14px;
+}
+.recommend .title div.active {
+  border-top-color:#35c367;
+  color: #fff;
+}
+.recommend h2 img {
+  width: 100%;
+}
+.recommend .recommend-list {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+.recommend .recommend-list li {
+  float: left;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 4px;
+  position: relative;
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+.recommend .recommend-list li .recommend-list-wrapper {
+  background: #2c3035;
+}
+.recommend .recommend-list .recommend-img {
+  width: 100%;
+}
+.recommend .recommend-list .recommend-img img {
+  width: 100%;
+}
+
+.similar-product-text {
+  height: 17px;
+  font-size: 12px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  color: #fff;
+  margin-top: 5px;
+  line-height: 17px;
+  margin-bottom: 3px;
+  padding: 0 4px;
+}
+.similar-product-sale {
+  color: #45c674;
+  font-size: 12px;
+  height: 17px;
+  line-height: 17px;
+  width: 100%;
+}
+.recommend-product-info {
+  height: 23px;
+  font-size: 13px;
+  overflow: hidden;
+  padding-bottom: 5px;
+  padding-top: 8px;
+}
+.recommend-product-info .recommend-product-favo {
+  float: right;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+  font-size: 12px;
+  padding:0 5px 0 17px; 
+  background: url('../images/favorites.png') left center no-repeat;
+  -webkit-background-size: 12px 10px;
+  background-size: 12px 10px;
+}
+.recommend-product-info .recommend-product-price {
+  color: #fff;
+  display: inline-block;
+  padding: 0 5px 0 4px;
+  position: relative;
+  top: 1px;
+  height: 25px;
+  line-height: 25px;
+}
+.recommend-product-info .recommend-product-price span{
+  font-size: 14px;
+}
+.recommend-product-price .small-price {
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 2px;
+  height: 17px;
+  line-height: 17px;
+  margin-left: 5px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #5be991;
+  color: #2c3035;
+}
+.clearHeight {
+  width: 100%;
+  height: 1px;
+  clear:both;
+}
+.search-bg {
+  height: 44px;
+  width: 100%;
+}
+.search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #212528;
+  padding:0 15px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 44px;
+  line-height: 44px;
+}
+.search .search-div {
+  width: 100%;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+}
+.search .search-div a {
+  position: absolute;
+  display: inline-block;
+  width:30px;
+  height:30px;
+  border:none;
+  left: 0;
+  top: 5px;
+}
+.search .search-div input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+  margin-top: 7px;
+  color: #141516;
+  padding-left: 30px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background:#fff url("../images/search.png") 8px center no-repeat;
+  -webkit-background-size: 15px 15px;
+  background-size: 15px 15px;
+}

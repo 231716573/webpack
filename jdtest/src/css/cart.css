@@ -1,0 +1,30 @@
+body {color: #8e8e8e;}
+.can-use { padding: 15px; font-size: 14px; }
+.cart-fn { margin: 0 15px; padding: 15px; background-color: #24282b; border-bottom: 1px solid #a0a0a0; display: flex; display: -webkit-flex; }
+.cart-fn-left { flex: 1; font-size: 12px; }
+.cart-fn-left .title { font-size: 14px; margin-bottom: 5px; }
+.cart-fn-left .desc { color: #45c674; }
+.cart-fn-right { flex: 2; }
+.cart-fn-right input[type=button] { padding:10px 17px; background-color: #35c367; border:none; border-radius: 4px; -webkit-border-radius: 4px; color:#fff; float: right; font-size: 16px; margin-left: 10px; }
+.cart-fn-right .goods { text-align: right; font-size: 12px; color:#fff; }
+.cart-fn-right .goods .money { margin-bottom: 5px; font-size: 14px; }
+.cart-fn-right .goods .num span { font-size: 13px; color:#8e8e8e; }
+.cart-wrapper { margin: 0 15px; }
+.cart-list {margin-bottom: 10px; padding: 10px 0; display: flex; background-color: #383b41;  }
+.cart-select { flex: 0 0 40px; text-align: center; -webkit-align-items: center;
+  align-items: center; justify-content: center;
+  -webkit-box-align: center;}
+.cart-select img { width: 60%; height: auto; 
+  vertical-align: middle;}
+.cart-view { flex: 1;}
+.cart-view .cart-pic { float: left; width: 80px; margin-right: 10px; }
+.cart-view .cart-pic img { width: 100%; height: auto; }
+.cart-view .cart-info .title { color:#fff; font-size: 14px; margin-right: 10px; margin-bottom: 10px; }
+.cart-view .cart-info .title span { float: right; font-size: 12px; }
+.cart-view .cart-info .desc { font-size: 13px; color:#8e8e8e; }
+.cart-view .cart-info .good { text-align: right; margin-top: 15px; margin-right: 10px; }
+.cart-view .cart-info .good input { text-align: center; background-color: #2c3033; border: none; width: 28px; height: 28px; line-height: 28px; font-size: 20px; color:#828282; float: right; }
+.cart-view .cart-info .good input[type=text] { width: 36px; height: 26px; line-height: 27px; background-color: #1a1d20; color:#b3b3b3;  font-size: 16px; margin-bottom: 2px;}
+.cart-view .cart-info .good input.add { border-radius: 0 5px 5px 0; }
+.cart-view .cart-info .good input.reduce { border-radius: 5px 0  0 5px; }
+.cart-view .cart-info .good a { width: 30px; height: 30px; display: inline-block; background: url(../images/delete.png) center center no-repeat; -webkit-background-size: 70% 70%; background-size: 70% 70%; margin-right: 10px;}

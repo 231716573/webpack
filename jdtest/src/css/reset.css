@@ -1,0 +1,102 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a { text-decoration: none; }
+
+.fixed-bottom { clear: both; height: 50px; width: 100%; }
+.fixed-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+}
+.fixed-wrapper .fixed-list {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.fixed-wrapper .fixed-list:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+.fixed-wrapper .fixed-list li {
+  flex: 1;
+  text-align: center;
+}
+.fixed-wrapper .fixed-list li a {
+  display: block;
+}
+.fixed-wrapper .fixed-list li img {
+  max-height: 60%;
+  max-width: 70%;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.head-fixed { position: fixed; z-index: 111; left:0px; top:0px; width: 100%; border-bottom: 1px solid #ddd; background-color: #fff; text-align: center; height:44px; line-height: 44px; }
+.head-fixed h2 { height:43px; line-height: 43px; font-size: 18px; background-color: #fff; color:#000; }
+.head-fixed a.turnleft { background:#fff url(../images/turnleft.png) center center no-repeat; display: inline-block; width: 43px; height: 43px; position: fixed; left:0px; top:0px; -webkit-background-size: 10px 20px; background-size: 10px 20px; }
+.for-head-fixed { height:44px; width: 100%; }
+
+html, body {
+  position: relative;
+  height: 100%;
+  background: #1a1d20;
+}
